@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: chatwork-webhook-bot
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: CHATWORK_API_TOKEN
+        sync: false
+      - key: NODE_ENV
+        value: production
